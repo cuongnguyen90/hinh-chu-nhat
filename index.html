@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rectangle</title>
+</head>
+
+<body onload="creatRectangle()">
+<canvas id="drawCanvas" width="1000px" height="600x" style="border: 1px solid grey"></canvas>
+<script>
+    function Rectangle(width,height) {
+        this.width = width;
+        this.height = height;
+        this.c = (width+height)*2;
+        this.s = width * height;
+    }
+    
+    function creatRectangle() {
+        let ctx = document.getElementById('drawCanvas').getContext('2d');
+
+        let rectangle = new Rectangle(250,100);
+
+        let width = Math.floor(Math.random()*1000);
+
+        let height = Math.floor(Math.random()*600);
+
+        ctx.beginPath()
+
+        ctx.rect(width,height,rectangle.width,rectangle.height);
+
+        ctx.fillStyle = 'red';
+
+        ctx.fill();
+
+        ctx.closePath();
+
+        console.log(rectangle.s,rectangle.c);
+    }
+    
+</script>
+</body>
+</html>
